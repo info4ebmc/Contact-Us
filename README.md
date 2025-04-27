@@ -21,9 +21,12 @@
       <input class="fs-input" id="number" name="number" required />
     </div>
     <div class="fs-field">
-      <label class="fs-label" for="message">WHAT SERVICES ARE YOU LOOKING FOR?</label>
+      <label class="fs-label" for="message">What services are you looking for?</label>
       <textarea class="fs-textarea" id="message" name="message"></textarea>
-      <p class="fs-description">We usually respond within 1–2 business days.</p>
+    </div>
+    <div class="fs-field">
+      <label class="fs-label" for="contact-time">When would you like to be contacted?</label>
+      <input class="fs-input" type="datetime-local" id="contact-time" name="contact-time">
     </div>
     <div class="fs-button-group">
       <button class="fs-button" type="submit">Send</button>
