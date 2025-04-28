@@ -24,7 +24,7 @@
     }
 
     .fs-field {
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
     .fs-label {
@@ -33,12 +33,26 @@
       font-weight: bold;
     }
 
+    /* Smaller input fields */
     .fs-input,
     .fs-textarea {
-      width: 100%;
-      padding: 10px;
-      font-size: 1em;
+      width: 80%;  /* Reduced the width */
+      padding: 8px;  /* Reduced padding */
+      font-size: 0.9em;  /* Smaller font */
       box-sizing: border-box;
+      margin-bottom: 8px;
+    }
+
+    .fs-textarea {
+      height: 100px; /* Make the textarea height smaller */
+    }
+
+    .fs-input[type="datetime-local"] {
+      padding: 6px;
+    }
+
+    .fs-button-group {
+      margin-top: 15px;
     }
   </style>
 </head>
