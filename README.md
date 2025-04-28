@@ -79,9 +79,9 @@
     <label><input type="checkbox" name="services[]" value="Final Expense"> Final Expense</label>
     <label><input type="checkbox" name="services[]" value="Life Insurance"> Life Insurance</label>
     <label><input type="checkbox" name="services[]" value="Annuities"> Annuities</label>
-    <label><input type="checkbox" name="services[]" value="Medicare Advantage"> Medicare Advantage</label>
-    <label><input type="checkbox" name="services[]" value="Medicare Supplement"> Medicare Supplement</label>
-    <label><input type="checkbox" name="services[]" value="Dental and Vision"> Dental and Vision</label>
+    <label><input type="checkbox" name="services[]" value="Medicare"> Medicare</label>
+    <label><input type="checkbox" name="services[]" value="Dental"> Dental</label>
+    <label><input type="checkbox" name="services[]" value="Vision">Vision</label>
     <label><input type="checkbox" name="services[]" value="ACA Marketplace"> ACA Marketplace</label> <!-- New line added -->
   </div>
 </div>
