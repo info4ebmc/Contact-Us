@@ -3,6 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <title>Contact Us</title>
+  <style>
+    h2 {
+      color: green;
+      font-size: 2.5em;
+    }
+
+    .fs-button {
+      background-color: green;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .fs-button:hover {
+      background-color: darkgreen;
+    }
+
+    .fs-field {
+      margin-bottom: 15px;
+    }
+
+    .fs-label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .fs-input,
+    .fs-textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 1em;
+      box-sizing: border-box;
+    }
+  </style>
 </head>
 <body>
 
