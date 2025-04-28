@@ -73,7 +73,7 @@
       <input class="fs-input" id="number" name="number" required />
     </div>
     <div class="fs-field">
-      <label class="fs-label" for="message">What services are you looking for?</label>
+      <label class="fs-label" for="message">What can we help you with?</label>
       <textarea class="fs-textarea" id="message" name="message"></textarea>
     </div>
     <div class="fs-field">
