@@ -32,6 +32,12 @@
       font-weight: bold;
     }
 
+    .required::before {
+      content: "* ";
+      color: red;
+      font-weight: bold;
+    }
+
     .fs-input,
     .fs-textarea,
     .fs-checkbox-group {
@@ -81,6 +87,13 @@
       margin-top: 20px;
       display: none;
     }
+
+    #checkbox-error {
+      color: red;
+      display: none;
+      font-size: 0.9em;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
@@ -88,21 +101,20 @@
   <h2>Contact Us</h2>
   <form id="contact-form" action="https://formspree.io/f/xrbqbryo" method="POST" target="_top">
     <div class="fs-field">
-      <label class="fs-label" for="name">Name</label>
+      <label class="fs-label required" for="name">Name</label>
       <input class="fs-input" id="name" name="name" required />
     </div>
     <div class="fs-field">
-      <label class="fs-label" for="email">Email Address</label>
+      <label class="fs-label required" for="email">Email Address</label>
       <input class="fs-input" id="email" name="email" required />
     </div>
     <div class="fs-field">
-      <label class="fs-label" for="number">Phone Number</label>
+      <label class="fs-label required" for="number">Phone Number</label>
       <input class="fs-input" id="number" name="number" required />
     </div>
 
-    <!-- Corrected checkbox section -->
     <div class="fs-field">
-      <label class="fs-label">What can we help you with?</label>
+      <label class="fs-label required">What can we help you with?</label>
       <div class="fs-checkbox-group">
         <label><input type="checkbox" id="service-final" name="services[]" value="Final Expense"> Final Expense</label>
         <label><input type="checkbox" id="service-life" name="services[]" value="Life Insurance"> Life Insurance</label>
@@ -112,6 +124,7 @@
         <label><input type="checkbox" id="service-vision" name="services[]" value="Vision"> Vision</label>
         <label><input type="checkbox" id="service-aca" name="services[]" value="ACA Marketplace"> ACA Marketplace</label>
       </div>
+      <div id="checkbox-error">Please select at least one option.</div>
     </div>
 
     <div class="fs-field">
@@ -129,9 +142,22 @@
   <script>
     const form = document.getElementById('contact-form');
     const status = document.getElementById('form-status');
+    const checkboxGroup = document.querySelectorAll('input[name="services[]"]');
+    const checkboxError = document.getElementById('checkbox-error');
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+
+      // Check if at least one checkbox is selected
+      let isChecked = Array.from(checkboxGroup).some(checkbox => checkbox.checked);
+
+      if (!isChecked) {
+        checkboxError.style.display = 'block';  // Show error message if no checkbox is selected
+        return;  // Prevent form submission
+      } else {
+        checkboxError.style.display = 'none';  // Hide error message if any checkbox is selected
+      }
+
       const data = new FormData(form);
       try {
         const res = await fetch("https://formspree.io/f/xrbqbryo", {
